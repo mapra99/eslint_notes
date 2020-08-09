@@ -246,3 +246,58 @@ console.log(numbers.includes(0));
 
 ### Operador de potencia
 
+Introdujeron el `**` como operador de potencia
+
+```javascript
+// es7
+let base = 4;
+let exponent = 3;
+let result = base ** exponent; // ** is the operator that was included in es7
+console.log(result);
+```
+
+## Qué hay de nuevo en ES8?
+
+ES8 se publicó en junio de 2017
+
+### Object Entries
+
+Permite obtener un objeto como matriz
+
+```javascript
+const data = {
+  fronend: 'Oscar',
+  backend: 'Miguel',
+  design: 'Ana'
+}
+
+const entries = Object.entries(data);
+console.log(entries);
+```
+
+### Object Values
+
+Permite extraer los valores de un objeto
+
+```javascript
+const data = {
+  fronend: 'Oscar',
+  backend: 'Miguel',
+  design: 'Ana',
+};
+
+const values = Object.values(data);
+console.log(values);
+```
+
+### String Padding
+
+```javascript
+const string = 'hello';
+console.log(string.padStart(8, 'hi'));
+```
+
+
+
+
+
