@@ -299,3 +299,133 @@ console.log(string.padStart(8, '-'));
 console.log(string.padEnd(8, '-'));
 ```
 
+### async/await
+
+```javascript
+const helloPromise = (number) => {
+  return new Promise((resolve, reject) => {
+    if (number % 2 === 0) {
+      setTimeout(() => resolve("Hey! All good"), 3000);
+    } else {
+      reject(new Error("Error :/"));
+    }
+  });
+};
+
+// es8
+const helloAsync = async (number) => {
+  try {
+    const hello = await helloPromise(number);
+    console.log(hello);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+helloAsync(2);
+helloAsync(3);
+```
+
+## Qué hay de nuevo en ES9?
+
+### Operador de reposo
+
+ ```javascript
+const data = {
+  frontend: 'Oscar',
+  backend: 'Miguel',
+  design: 'Ana',
+};
+
+let {frontend, ...all} = data;
+console.log(frontend, all);
+ ```
+
+### Multiple propagation
+
+```javascript
+const data = {
+  frontend: 'Oscar',
+  backend: 'Miguel',
+};
+
+const data2 = {
+  ...data,
+  design: 'Ana',
+};
+```
+
+### Promise.finally
+
+```javascript
+const helloPromise = (number) => {
+  return new Promise((resolve, reject) => {
+    if (number % 2 === 0) {
+      resolve("Hey! All good")
+    } else {
+      reject("Error :/")
+    }
+  });
+};
+
+helloPromise(3)
+  .then(response => console.log(response))
+  .then(() => console.log("something after promise finished"))
+  .catch(error => console.error(error))
+  .finally(result => console.log("anyway this is always printed"))
+
+helloPromise(4)
+  .then(response => console.log(response))
+  .then(() => console.log("something after promise finished"))
+  .catch(error => console.error(error))
+  .finally(() => console.log("anyway this is always printed"))
+```
+
+## Qué hay de nuevo en ES10?
+
+### Array flat
+
+```javascript
+let array = [1,2,3, [1,2,3, [1,2,3]]];
+
+console.log(array);
+console.log(array.flat(1));
+console.log(array.flat(2));
+```
+
+### String trimming
+
+```javascript
+let string = '               hello world      ';
+
+console.log(string);
+console.log(string.trimStart());
+console.log(string.trimEnd());
+console.log(string.trimStart().trimEnd());
+```
+
+### Object.fromEntries
+
+```javascript
+let entries = [["name", "Miguel"], ["age", 33]];
+
+let myObject = Object.fromEntries(entries);
+console.log(myObject);
+```
+
+## ES NEXT?
+
+El equipo que recibe, construye y evalúa las nuevas implementaciones de ECMAscript  se llama TC39.
+
+El proceso:
+
+Stage 0: Idea
+
+Stage 1: Proposal
+
+Stage 2: Draft
+
+Stage 3: Candidate
+
+Stage 4: Ready
+
