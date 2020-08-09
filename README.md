@@ -1,5 +1,7 @@
 # Curso de ECMAScript 6+
 
+[TOC]
+
 ## Qué es ECMAScript
 
 Es la especificación de lenguaje propuesto por ECMA Inernacional. En terminos practicos, cada estándar producido por ECMA marca una "versión" sobre el uso de Javascript. ECMA ha lanzado versiones desde 1996 hasta ahora. Tuvo un estanque entre 1999 y 2001
@@ -225,4 +227,22 @@ console.log(anotherHelloGenerator.next().value);
 console.log(anotherHelloGenerator.next().value);
 console.log(anotherHelloGenerator.next().value);
 ```
+
+## Qué hay de nuevo en ES7?
+
+ES7 se publicó en junio de 2016
+
+### includes
+
+Sirve para saber si hay un elemento dentro de un array
+
+```javascript
+let numbers = [1, 2, 4, 2, 5, 7, 8, 10];
+
+// es7
+console.log(numbers.includes(7));
+console.log(numbers.includes(0));
+```
+
+### Operador de potencia
 
